@@ -10,32 +10,39 @@ function App() {
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
+  const [selectedCard, setSelectedCard] = React.useState(null);
+
+  function handleCardClick(card) {
+    setSelectedCard(card);
+  };
 
   function handleEditAvatarClick() {
     setIsEditAvatarPopupOpen(true)
-  }
+  };
 
   function handleEditProfileClick() {
     setIsEditProfilePopupOpen(true)
-  }
+  };
 
   function handleAddPlaceClick() {
     setIsAddPlacePopupOpen(true)
-  }
+  };
 
   function closeAllPopups() {
     setIsEditAvatarPopupOpen(false);
     setIsEditProfilePopupOpen(false);
     setIsAddPlacePopupOpen(false);
-  }
+    setSelectedCard(null);
+  };
 
   return (
     <>
       <Header />
       <Main
-      onEditProfile={handleEditProfileClick}
-      onAddPlace={handleAddPlaceClick}
-      onEditAvatar={handleEditAvatarClick}
+        onEditProfile={handleEditProfileClick}
+        onAddPlace={handleAddPlaceClick}
+        onEditAvatar={handleEditAvatarClick}
+        onCardClick={handleCardClick}
       />
       <Footer />
       <PopupWithForm 
@@ -47,7 +54,7 @@ function App() {
           <>
             <input id="name-input" type="text" className="form__input form__input_type_title" name="name" placeholder="Введите имя" required minLength="2" maxLength="40" />
             <span className="form__input-error name-input-error"></span>
-            <input id="job-input" type="text" className="form__input form__input_type_subtitle" name="info" placeholder="Введите профессию" required minLength="2" maxLength="200" />
+            <input id="job-input" type="text" className="form__input form__input_type_subtitle" name="about" placeholder="Введите профессию" required minLength="2" maxLength="200" />
             <span className="form__input-error job-input-error"></span>
         </>
         }
@@ -59,10 +66,10 @@ function App() {
         onClose={closeAllPopups}
         children={
           <>
-            <input id="name-input" type="text" className="form__input form__input_type_title" name="name" placeholder="Введите имя" required minLength="2" maxLength="40" />
-            <span className="form__input-error name-input-error"></span>
-            <input id="job-input" type="text" className="form__input form__input_type_subtitle" name="info" placeholder="Введите профессию" required minLength="2" maxLength="200" />
-            <span className="form__input-error job-input-error"></span>
+            <input id="place-input" type="text" className="form__input form__input_type_place" name="place" placeholder="Название" required minLength="2" maxLength="30" />
+            <span className="form__input-error place-input-error"></span>
+            <input id="link-input" type="url" className="form__input form__input_type_link" name="link" placeholder="Ссылка на картинку" required />
+            <span className="form__input-error link-input-error"></span>
           </>
         }
       />
@@ -82,7 +89,10 @@ function App() {
         name="confirm-delete"
         title="Вы уверены?"
       />
-      <ImagePopup />
+      <ImagePopup 
+        card={selectedCard}
+        onClose={closeAllPopups}
+      />
   </>
   );
 }
