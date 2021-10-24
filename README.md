@@ -12,8 +12,8 @@
 * API
 * React JS
 ### Инструкция по установке
-* Клонировать репозиторий:
+* Клонировать репозиторий:    
 https://github.com/Lattecup/mesto-react.git
-* Запустить приложение в директории проекта:
-npm install
-npm start
+* Запустить приложение в директории проекта:    
+npm install    
+npm start    
