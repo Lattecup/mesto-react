@@ -19,7 +19,7 @@ function Main(props) {
       .catch((err) => {
         console.log(err);
       });
-  });
+  }, []);
 
   React.useEffect(() => {
     api.getInitialCards()
@@ -29,7 +29,7 @@ function Main(props) {
       .catch((err) => {
         console.log(err);
       });
-  })
+  }, []);
 
   return (
     <main className="content">
