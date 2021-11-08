@@ -16,4 +16,6 @@
 https://github.com/Lattecup/mesto-react.git
 * Запустить приложение в директории проекта:    
 npm install    
-npm start    
+npm start
+### Работа доступна по ссылке:
+https://lattecup.github.io/mesto-react/
