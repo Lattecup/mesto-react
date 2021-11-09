@@ -24,12 +24,12 @@ function Card(props) {
 
   return (
     <div className="card">
-      <button type="button" onClick={handleDeleteClick} className={cardDeleteButtonClassName} aria-label="Удалить карточку"></button>
+      <button type="button" onClick={handleDeleteClick} className={cardDeleteButtonClassName} aria-label="Удалить карточку" />
       <img src={props.card.link} alt={props.card.name} className="card__image" onClick={handleClick} />
       <div className="card__content">
         <h2 className="card__caption">{props.card.name}</h2>
         <div className="card__like-container">
-          <button type="button" onClick={handleLikeClick} className={cardLikeButtonClassName} aria-label="Поставить лайк"></button>
+          <button type="button" onClick={handleLikeClick} className={cardLikeButtonClassName} aria-label="Поставить лайк" />
           <span className="card__like-counter">{props.card.likes.length}</span>          
         </div>
       </div>

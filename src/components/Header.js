@@ -5,7 +5,7 @@ function Header() {
   return (
     <header className="header">
       <a href="https://Lattecup.github.io/mesto/">
-        <img src={logo} className="header__logo" alt="Логотип"/>
+        <img src={logo} className="header__logo" alt="Логотип" />
       </a>
     </header>
   );

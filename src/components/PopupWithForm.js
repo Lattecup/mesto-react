@@ -10,7 +10,7 @@ function PopupWithForm(props) {
             {props.children}
           </fieldset>
           <button type="submit" className="form__submit-button">{props.isLoading ? props.loadingButtonText : props.buttonText}</button>
-          <button type="button" className="popup__close-button" aria-label="Закрыть" onClick={props.onClose}></button>
+          <button type="button" className="popup__close-button" aria-label="Закрыть" onClick={props.onClose} />
         </form>
       </div>
     </div>
